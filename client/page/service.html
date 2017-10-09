@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../font/fontawesome/css/font-awesome.min.css">
+</head>
+<body>
+<!--头部开始-->
+<div class="j-index-header">
+    <div id="cart" class="cart">
+        <div class="cartbox">
+            <ul>
+                <li><a href="../page/shoppingCart.html"><span class="fa fa-shopping-cart"></span></a></li>
+                <li class="k-myLogin" onclick="myLoginOpen()" ><a href="#">登录 |</a></li>
+                <li class="k-mySign"><a href="#" onclick="mySignOpen()">注册</a></li>
+                <li class="k-myLoginUser"><a href="#">用户名 |</a></li>
+                <li class="k-myLogout"><a href="#">注销</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="j-index-headbg j-spage-head">
+        <div id="first-nav" class="j-index-navigation j-spage-nav">
+            <img class="logo" src="../images/j-logo2.png" alt=""/>
+            <ul>
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="../page/allProduct.html">产品</a></li>
+                <li><a href="../page/brand.html">品牌</a></li>
+                <li><a href="../page/service.html">服务</a></li>
+                <li><a href="../page/theDesigner.html">设计</a></li>
+                <li><a href="../page/aboutUs.html">关于</a></li>
+            </ul>
+            <div class="slogan">
+                <h4>享家独立家具品牌</h4>
+                <p>enjoy the love at home</p>
+            </div>
+        </div>
+    </div>
+    <!--滚动超过670时出现的导航条-->
+    <div id="second-nav" class="j-index-nav2">
+        <div class="nav-box" id="nav-box">
+            <ul>
+                <li><a href="../index.html"><img src="../images/j-nav1.png" alt=""/><span>首页</span></a></li>
+                <li><a href="../page/allProduct.html"><img src="../images/j-nav2.png" alt=""/><span>产品</span></a></li>
+                <li><a href="brand.html"><img class="third" src="../images/j-nav3.png" alt=""/><span>品牌</span></a></li>
+                <li><a href="service.html"><img class="fourth" src="../images/j-nav4.png" alt=""/><span>服务</span></a></li>
+                <li><a href="theDesigner.html"><img src="../images/j-nav5.png" alt=""/><span>设计</span></a></li>
+                <li><a href="aboutUs.html"><img src="../images/j-nav6.png" alt=""/><span>关于</span></a></li>
+            </ul>
+            <span id="bar" class="j-bars fa fa-bars"></span>
+        </div>
+    </div>
+</div>
+<!--覆盖层-->
+<div class="k-cover"></div>
+<!--登录开始-->
+<div class="k-loginBox">
+    <div class="k-closeBox">
+        <div class="k-closeBtn" onclick="myClose()">×</div>
+    </div>
+    <div class="k-login">
+        <div class="k-login-title">
+            <h5>登录</h5>
+            <form action="/denglu.do" method="get">
+                <input class="k-login-tel" name="name" onblur="rLoginUser()" type="text" placeholder="请输入用户名"/>
+                <input class="k-login-password" name="password" onblur="rLoginPass()" type="password" placeholder="请输入密码"/>
+                <span class="k-loginUserAndPass"></span>
+                <p class="k-login-checkbox">
+                    <input type="checkbox" checked="checked"/><span>记住我的登录</span>
+                    <!--<a href="#">忘记密码？</a>-->
+                </p>
+                <input class="k-login-button" onclick="myLoginAjax()" type="submit" value="登录"/>
+            </form>
+        </div>
+        <div class="k-login-line">
+            <p></p>
+        </div>
+        <div class="k-login-weiXin">
+            <img src="../images/weixinimg.jpg" alt=""/>
+            <p>使用微信二维码扫码登入</p>
+            <p>如果您还未拥有享家账户，可点击此处注册</p>
+            <input class="k-loginToReigister-button" onclick="switchSign()" type="button" value="注册"/>
+        </div>
+    </div>
+</div>
+<!--注册开始-->
+<div class="k-registerBox">
+    <div class="k-closeBox" onclick="myClose()">
+        <div class="k-closeBtn">×</div>
+    </div>
+    <div class="k-register">
+        <div class="k-register-title">
+            <h5>注册</h5>
+            <form action="index.ejs" method="post">
+                <input class="k-register-tel" onblur="mySignUserAjax()" type="text" placeholder="请输入用户名"/>
+                <span class="k-signUserPrompt"></span>
+                <input class="k-register-password" type="password" placeholder="请输入密码"/>
+                <input class="k-register-rPassword" onblur="mySignRPassAjax()" type="password" placeholder="请再次输入密码"/>
+                <span class="k-signPasswordPrompt"></span>
+                <p class="k-register-checkbox">
+                    <!--<input type="checkbox"/><span> 我已阅读并同意遵守法律声明和隐私条款</span>-->
+                </p>
+                <input class="k-register-button" onclick="addData()" type="button" value="注册"/>
+            </form>
+        </div>
+        <div class="k-register-line">
+            <p></p>
+        </div>
+        <div class="k-register-weiXin">
+            <img src="../images/weixinimg.jpg" alt=""/>
+            <p>使用微信二维码扫码登入</p>
+            <p>如果您已拥有享家账户，可点击此处登录</p>
+            <input class="k-registerToLogin-button" onclick="switchLogin()" type="button" value="登录"/>
+        </div>
+    </div>
+</div>
+<!--内容开始-->
+<div class="k-content">
+    <!--内容第一部分开始-->
+    <div class="k-craftWork">
+        <h1>craftwork</h1>
+        <p>享家&nbsp;匠心</p>
+        <p>
+            <span>享家家具的结构均采用榫卯结构连接为主，<br/>
+                  胶合与五金件辅助加固。<br/>
+                  加工过程均采用机器辅助开料，<br/>
+                  传统手工工艺深加工，因此家具有明显手工痕迹。
+            </span>
+        </p>
+        <div class="k-craftWorkShadow"></div>
+    </div>
+    <!--内容第二部分开始-->
+    <div class="k-quality">
+        <h1>quality</h1>
+        <p>享家&nbsp;匠心</p>
+        <div>
+            <h2>关于原木</h2>
+            <p>较之市场上常见的仿实木家具，实木家具更加结实、耐用、环保<br/>
+                例如如果在使用过程中，家具的表面有所损坏，实木家具露出的<br/>
+                依旧是木头但仿实木家具则会被完全破坏。实木来源于自然，木<br/>
+                材的自然特性决定它会因湿度的变化出现发胀或收缩。
+            </p>
+            <p>我们建议，使用实木家具时，环境湿度最好不低于35％</p>
+            <h2>关于油漆</h2>
+            <p>
+                梵几家具的面漆处理采用木蜡油工艺，既能保持原木的手感和质<br/>
+                感又起到保护作用，方便维护也更加环保。 所有涂层均使用德国<br/>
+                进口欧诗木品牌木蜡油，不含苯、重金属等有害物质，
+            </p>
+            <p>符合欧盟DIN53160标准和EN71标准</p>
+        </div>
+    </div>
+    <!--内容第三部分开始-->
+    <div class="k-maintain">
+        <h1>maintain</h1>
+        <p>享家&nbsp;匠心</p>
+        <div>
+            <p><span class="k-title">适宜室内使用</span><span class="k-text1">不适用于室外露天区域。请尽量远离热源和空调出风口，避免阳光暴晒</span></p>
+        </div>
+        <div>
+            <p><span class="k-title">德国进口植物木蜡油</span><span class="k-text2">具有一定的防污防水能力，但请注意避免水渍、油污长时间浸泡，不要<br/>
+                用酒精或化学试剂清理表面，可用干棉布或棉布沾水拧干后擦拭清洁</span>
+            </p>
+        </div>
+        <div>
+            <p><span class="k-title">保养</span><span class="k-text3">经过一定时间的使用，如发现防污防水能力下降，可以用保养油、蜂蜡<br/>
+                或木蜡油进行保养，以恢复家具表面的防污力</span>
+            </p>
+        </div>
+        <div>
+            <p><span class="k-title">注意室内湿度</span><span class="k-text4">湿度在35%～65%的区间,对人体和实木家具均较适宜。将室内湿度保<br/>
+                持在35%～65%湿度环境下，能够大大减少因实木本身特性产生问题</span>
+            </p>
+        </div>
+    </div>
+    <!--内容第四部分开始-->
+    <div class="k-serIma">
+        <ul>
+            <li>
+                <img src="../images/3.jpg" alt=""/>
+                <h2>family</h2>
+                <p>和谐一家</p>
+            </li>
+            <li>
+                <img src="../images/4.jpg" alt=""/>
+                <h2>service</h2>
+                <p>上门服务</p>
+            </li>
+            <li>
+                <img src="../images/5.jpg" alt=""/>
+                <h2>Craftsmanship</h2>
+                <p>工艺制作</p>
+            </li>
+        </ul>
+    </div>
+    <!--内容第五部分开始-->
+    <div class="k-aboutInspection">
+        <h6>关于验货</h6>
+        <p>购买方需在收货时当场验货，幷对数量进行清点，对破损及质量问题需当面提出异议。因拍摄和光线问题，<br/>
+            照片与实物可能略有差异，该问题不属于质量问题。<br/>
+            家具所有面漆均使用德国进口植物提取材料，不含苯、重金属等有害物质，符合欧盟DIN53160标准和EN71标准，<br/>
+            但送货时可能有少量气味，于非封闭空间会在短期内散去， 该问题不属于质量问题。</p>
+    </div>
+</div>
+<!--覆盖层-->
+<div class="k-cover"></div>
+<!--登录开始-->
+<div class="k-loginBox">
+    <div class="k-closeBox">
+        <div class="k-closeBtn" onclick="myClose()">×</div>
+    </div>
+    <div class="k-login">
+        <div class="k-login-title">
+            <h5>登录</h5>
+            <form action="" method="get">
+                <input class="k-login-tel" type="text" placeholder="请输入用户名"/>
+                <input class="k-login-password" type="text" placeholder="请输入密码"/>
+                <p class="k-login-checkbox">
+                    <input type="checkbox"/><span>记住我的登录</span>
+                    <!--<a href="#">忘记密码？</a>-->
+                </p>
+                <input class="k-login-button" type="button" value="登录"/>
+            </form>
+        </div>
+        <div class="k-login-line">
+            <p></p>
+        </div>
+        <div class="k-login-weiXin">
+            <img src="../images/weixinimg.jpg" alt=""/>
+            <p>使用微信二维码扫码登入</p>
+            <p>如果您还未拥有享家账户，可点击此处注册</p>
+            <input class="k-loginToReigister-button" onclick="switchSign()" type="button" value="注册"/>
+        </div>
+    </div>
+</div>
+<!--注册开始-->
+<div class="k-registerBox">
+    <div class="k-closeBox" onclick="myClose()">
+        <div class="k-closeBtn">×</div>
+    </div>
+    <div class="k-register">
+        <div class="k-register-title">
+            <h5>注册</h5>
+            <form action="" method="get">
+                <input class="k-register-tel" type="text" placeholder="请输入用户名"/>
+                <input class="k-register-password" type="text" placeholder="请输入密码"/>
+                <input class="k-register-rPassword" type="text" placeholder="请再次输入密码"/>
+                <p class="k-register-checkbox">
+                    <!--<input type="checkbox"/><span> 我已阅读并同意遵守法律声明和隐私条款</span>-->
+                </p>
+                <input class="k-register-button" type="button" value="注册"/>
+            </form>
+        </div>
+        <div class="k-register-line">
+            <p></p>
+        </div>
+        <div class="k-register-weiXin">
+            <img src="../images/weixinimg.jpg" alt=""/>
+            <p>使用微信二维码扫码登入</p>
+            <p>如果您已拥有享家账户，可点击此处登录</p>
+            <input class="k-registerToLogin-button" onclick="switchLogin()" type="button" value="登录"/>
+        </div>
+    </div>
+</div>
+<!--页尾开始-->
+<div class="j-index-footer">
+    <div class="top">
+        <div class="left">
+            <div class="logo">
+                <h1>享家</h1>
+                <p>enjoy the love at home</p>
+            </div>
+        </div>
+        <div class="right">
+            <ul>
+                <li>
+                    <a href="#">客户服务</a>
+                    <ul>
+                        <li>享家购物攻略</li>
+                        <li>享家卖场</li>
+                        <li>享家服务</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">这就是享家</a>
+                    <ul>
+                        <li>享家理念</li>
+                        <li>民主设计</li>
+                        <li>更多服务</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">工作在享家</a>
+                    <ul>
+                        <li>现在就申请</li>
+                        <li>联系我们</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">订阅更新</a>
+                    <ul>
+                        <li>联系我们</li>
+                        <li>更多服务</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="center">
+        <span>订阅享家</span>
+        <input type="text" placeholder="enter your email"/>
+        <input type="button" class="sub" value="提交"/>
+    </div>
+    <div class="bottom">
+        <p>享家独立家居品牌  2015 XingJia Interior design Co. Ltd. Beijing, China</p>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../js/nav.js"></script>
+<script type="text/javascript" src="../js/login.js"></script>
+<script type="text/javascript" src="../js/login.js"></script>
+<script type="text/javascript" src="../js/myAjax.js"></script>
+<script>
+    window.onload=function(){
+        toSuccess();
+    }
+</script>
+</html>

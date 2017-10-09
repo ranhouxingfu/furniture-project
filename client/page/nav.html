@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../font/fontawesome/css/font-awesome.min.css">
+</head>
+<body>
+<div class="j-index-header">
+    <div id="cart" class="cart">
+        <div class="cartbox">
+            <ul>
+                <li><a href="../page/shoppingCart.html"><span class="fa fa-shopping-cart"></span></a></li>
+                <li class="k-myLogin" onclick="myLoginOpen()" ><a href="#">登录 |</a></li>
+                <li class="k-mySign"><a href="#" onclick="mySignOpen()">注册</a></li>
+                <li class="k-myLoginUser"><a href="#">用户名 |</a></li>
+                <li class="k-myLogout"><a href="#">注销</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="j-index-headbg j-spage-head">
+        <div id="first-nav" class="j-index-navigation j-spage-nav">
+            <img class="logo" src="../images/j-logo2.png" alt=""/>
+            <ul>
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="../page/allProduct.html">产品</a></li>
+                <li><a href="../page/brand.html">品牌</a></li>
+                <li><a href="../page/service.html">服务</a></li>
+                <li><a href="../page/theDesigner.html">设计</a></li>
+                <li><a href="../page/aboutUs.html">关于</a></li>
+            </ul>
+            <div class="slogan">
+                <h4>享家独立家具品牌</h4>
+                <p>enjoy the love at home</p>
+            </div>
+        </div>
+    </div>
+    <!--滚动超过670时出现的导航条-->
+    <div id="second-nav" class="j-index-nav2">
+        <div class="nav-box" id="nav-box">
+            <ul>
+                <li><a href="../index.html"><img src="../images/j-nav1.png" alt=""/><span>首页</span></a></li>
+                <li><a href="../page/allProduct.html"><img src="../images/j-nav2.png" alt=""/><span>产品</span></a></li>
+                <li><a href="brand.html"><img class="third" src="../images/j-nav3.png" alt=""/><span>品牌</span></a></li>
+                <li><a href="service.html"><img class="fourth" src="../images/j-nav4.png" alt=""/><span>服务</span></a></li>
+                <li><a href="theDesigner.html"><img src="../images/j-nav5.png" alt=""/><span>设计</span></a></li>
+                <li><a href="aboutUs.html"><img src="../images/j-nav6.png" alt=""/><span>关于</span></a></li>
+            </ul>
+            <span id="bar" class="j-bars fa fa-bars"></span>
+        </div>
+    </div>
+</div>
+<!--覆盖层-->
+<div class="k-cover"></div>
+<!--登录开始-->
+<div class="k-loginBox">
+    <div class="k-closeBox">
+        <div class="k-closeBtn" onclick="myClose()">×</div>
+    </div>
+    <div class="k-login">
+        <div class="k-login-title">
+            <h5>登录</h5>
+            <form action="/denglu.do" method="get">
+                <input class="k-login-tel" name="name" onblur="rLoginUser()" type="text" placeholder="请输入用户名"/>
+                <input class="k-login-password" name="password" onblur="rLoginPass()" type="password" placeholder="请输入密码"/>
+                <span class="k-loginUserAndPass"></span>
+                <p class="k-login-checkbox">
+                    <input type="checkbox" checked="checked"/><span>记住我的登录</span>
+                    <!--<a href="#">忘记密码？</a>-->
+                </p>
+                <input class="k-login-button" onclick="myLoginAjax()" type="submit" value="登录"/>
+            </form>
+        </div>
+        <div class="k-login-line">
+            <p></p>
+        </div>
+        <div class="k-login-weiXin">
+            <img src="../images/weixinimg.jpg" alt=""/>
+            <p>使用微信二维码扫码登入</p>
+            <p>如果您还未拥有享家账户，可点击此处注册</p>
+            <input class="k-loginToReigister-button" onclick="switchSign()" type="button" value="注册"/>
+        </div>
+    </div>
+</div>
+<!--注册开始-->
+<div class="k-registerBox">
+    <div class="k-closeBox" onclick="myClose()">
+        <div class="k-closeBtn">×</div>
+    </div>
+    <div class="k-register">
+        <div class="k-register-title">
+            <h5>注册</h5>
+            <form action="index.ejs" method="post">
+                <input class="k-register-tel" onblur="mySignUserAjax()" type="text" placeholder="请输入用户名"/>
+                <span class="k-signUserPrompt"></span>
+                <input class="k-register-password" type="password" placeholder="请输入密码"/>
+                <input class="k-register-rPassword" onblur="mySignRPassAjax()" type="password" placeholder="请再次输入密码"/>
+                <span class="k-signPasswordPrompt"></span>
+                <p class="k-register-checkbox">
+                    <!--<input type="checkbox"/><span> 我已阅读并同意遵守法律声明和隐私条款</span>-->
+                </p>
+                <input class="k-register-button" onclick="addData()" type="button" value="注册"/>
+            </form>
+        </div>
+        <div class="k-register-line">
+            <p></p>
+        </div>
+        <div class="k-register-weiXin">
+            <img src="../images/weixinimg.jpg" alt=""/>
+            <p>使用微信二维码扫码登入</p>
+            <p>如果您已拥有享家账户，可点击此处登录</p>
+            <input class="k-registerToLogin-button" onclick="switchLogin()" type="button" value="登录"/>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../js/nav.js"></script>
+<script type="text/javascript" src="../js/myAjax.js"></script>
+<script type="text/javascript" src="../js/login.js"></script>
+</html>

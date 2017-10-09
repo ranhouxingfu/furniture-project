@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../font/fontawesome/css/font-awesome.min.css">
+</head>
+<body>
+<input type="hidden" value="<%=productId%>"/>
+<!--============页头=========-->
+<%-include('nav.html')%>
+<!--内容-->
+<div class="m-mPro-bigBox">
+    <div class="m-mPro-buy">
+        <div class="flowSpan">
+            <span class="cFont">主打产品</span>
+            <span class="eFont"><img src="../images/m-main.png"></span>
+        </div>
+        <div class="imtable">
+            <!--产品大图-->
+            <img src="../images/<%=imageBig%>">
+            <a href="/productDetails.do?id=<%=productId%>">
+                <div class="buyButton">
+                <span class="icon-to fa fa-chevron-circle-right"></span>
+                购买
+            </div>
+            </a>
+        </div>
+        <div class="rightWord" id="rightWord">
+            <!--产品描述-->
+            <p><%=discribe%></p>
+        </div>
+        <div class="fold">
+            <div class="foldImg"><img src="../images/m-fodl.png"> </div>
+            <!--产品名字描述-->
+            <span><%=nameWord%></span>
+            <!--产品名字-->
+            <p><%=name%></p>
+        </div>
+    </div>
+    <div class="bgZhou">
+        <img src="../images/<%=imageRight%>" alt=""/>
+    </div>
+    <div class="m-mPro-midd">
+        <div class="middon">
+            <div class="leftImg">
+                <img src="../images/<%=imageLeftone%>">
+                <img src="../images/<%=imageLefttwo%>">
+            </div>
+            <div class="middImg">
+                <img src="../images/<%=imageMid%>">
+            </div>
+            <div class="rightW">
+                <img src="../images/m-plaz.png">
+                <p>经 典 设 计</p>
+            </div>
+        </div><!--middon end-->
+        <div class="middup">
+            <div class="middUpLeft">
+                <p>因此家具有明显手工痕迹。</p>
+                <p>在过于干燥或潮湿的季节，请注意室内湿度的调节。</p>
+                <p>将室内湿度保持在35%～65%湿度环境下，能够大大减少问题。</p>
+                <p>小件物品四脚略有不平，家具在使用时出现不影响使用等问题。</p>
+                <p>因实木家具的自然特性，可能出现颜色花纹与样品略有差别，</p>
+                <p>加工过程均采用机器辅助开料，传统手工工艺深加工，</p>
+                <p>家具的结构均采用榫卯结构连接为主，胶合与五金件辅助加固。</p>
+                <p>结构均采用榫卯结构连接为主，胶合与五金件辅助加固。</p>
+                <p>&bull;关于工艺 </p>
+                <p>重金属等有害物质，符合欧盟DIN53160标准和EN71标准。</p>
+                <p>所有涂层均使用德国进口欧诗木品牌木蜡油，不含苯、</p>
+                <p>又起到保护作用，方便维护也更加环保。</p>
+                <p>家具的面漆处理采用木蜡油工艺，既能保持原木</p>
+                <p>&bull;关于涂层</p>
+                <p>使用实木家具时，环境湿度最好不低于35％。</p>
+                <p> 实木来源于自然，木材的自然特性决定它会因湿。</p>
+                <p> 除罗汉床底板、多格活屉电视柜背板及软包家具</p>
+                <p> 家具为全实木家具，包括所有柜子背板</p>
+                <p> 较之市场上常见的仿实木家具、耐用、环保。</p>
+                <p> &bull;关于实木</p>
+            </div>
+            <div class="middUpRight">
+                <div class="upLeft">
+                    <img src="../images/<%=imageListone%>">
+                    <div></div>
+                    <img src="../images/<%=imageListtwo%>">
+                </div>
+                <div class="upRight">
+                    <img src="../images/<%=imageListthree%>">
+                    <img src="../images/<%=imageListfour%>">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bgword">
+        <img src="../images/<%=imageRight%>" alt=""/>
+    </div>
+</div>
+<!--页脚-->
+<%-include('footer.html')%>
+</body>
+<!--引入导航js-->
+<script type="text/javascript" src="../js/nav.js"></script>
+<script type="text/javascript" src="../js/mainProduct.js"></script>
+<script type="text/javascript" src="../js/login.js"></script>
+</html>
